@@ -1,0 +1,12 @@
+<h1>Salut Ducon</h1>
+
+<h2>Projets</h2>
+
+<button><%= link_to 'Ajouter', new_project_path %></button>
+
+<% @projects.each do |p|%>
+  <h3><%=p.name %></h3>
+  <span><%=p.year %></span>
+  <button><%= link_to 'Éditer', edit_project_path(p) %></button>
+  <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+<% end %>
