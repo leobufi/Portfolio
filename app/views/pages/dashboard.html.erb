@@ -10,3 +10,13 @@
   <button><%= link_to 'Éditer', edit_project_path(p) %></button>
   <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
 <% end %>
+
+<h2>Tags</h2>
+
+<button><%= link_to 'Ajouter', new_tag_path %></button>
+
+<% @tags.each do |t|%>
+  <h3><%=t.name %></h3>
+  <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
+  <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+<% end %>
