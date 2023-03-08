@@ -10,6 +10,10 @@
     <p><%= t.name %></p>
   <% end %>
   <p><%=p.year %></p>
+  <% p.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+  <% end %>
+  <br>
   <button><%= link_to 'Éditer', edit_project_path(p) %></button>
   <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
 <% end %>
@@ -25,3 +29,5 @@
   <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
   <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
 <% end %>
+
+<#% console %>
