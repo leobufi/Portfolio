@@ -6,10 +6,15 @@
 
 <% @projects.each do |p|%>
   <h3><%=p.name %></h3>
-  <span><%=p.year %></span>
+  <% p.tags.each do |t|%>
+    <p><%= t.name %></p>
+  <% end %>
+  <p><%=p.year %></p>
   <button><%= link_to 'Éditer', edit_project_path(p) %></button>
   <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
 <% end %>
+
+<hr>
 
 <h2>Tags</h2>
 

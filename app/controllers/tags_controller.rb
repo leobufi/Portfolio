@@ -7,7 +7,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -20,13 +20,13 @@ class TagsController < ApplicationController
   def update
     @tag = Tag.find(params[:id])
     @tag.update(tag_params)
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   private
