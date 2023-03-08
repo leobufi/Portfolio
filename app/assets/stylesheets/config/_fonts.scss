@@ -1,0 +1,13 @@
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Porpora", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+
+@font-face {
+  font-family: "Porpora";
+  font-weight: normal;
+  font-style: normal;
+  src: font-url('Porpora-Regular.woff') format('woff'),
+}
