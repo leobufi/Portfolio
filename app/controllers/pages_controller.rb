@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @projects = Project.all
-    @tags= Tag.all
+    @tags = Tag.all
   end
 
 end
