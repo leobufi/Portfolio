@@ -2,6 +2,7 @@
   <%= f.input :name %>
   <%= f.input :year %>
   <%= f.input :link %>
+  <%= f.input :tags, as: :check_boxes, collection: Project::TAG, input_html: { multiple: true }%>
   <%= f.input :photos %>
   <%= f.submit %>
 <% end %>
