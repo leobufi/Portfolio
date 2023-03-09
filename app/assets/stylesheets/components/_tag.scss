@@ -1,0 +1,14 @@
+.tags {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 1.5em;
+}
+
+.tag {
+  border: solid 3px $blue;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  padding: 0.5em 1em;
+  align-items: center;
+}

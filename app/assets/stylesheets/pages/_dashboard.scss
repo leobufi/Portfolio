@@ -1,0 +1,42 @@
+.project {
+  //padding: 1.5em 0em;
+  //border-top: solid 1px $white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2em;
+  align-items: center;
+
+  .infos {
+    display: flex;
+    column-gap: 2em;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    column-gap: 2em;
+    align-items: center;
+  }
+}
+
+.project-photos {
+  display: flex;
+  column-gap: 1em;
+  padding: 1em 0em;
+}
+
+.project-photo {
+  border: solid 1px $white;
+
+   img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+   }
+}

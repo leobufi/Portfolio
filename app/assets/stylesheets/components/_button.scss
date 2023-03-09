@@ -1,0 +1,20 @@
+button {
+  padding: 0.5em 1em;
+  border: solid 1px #0040FF;
+  border-radius: 25px;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $white;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    color: $white;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
