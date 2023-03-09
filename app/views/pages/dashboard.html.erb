@@ -1,33 +1,62 @@
-<h1>Salut Ducon</h1>
-
-<h2>Projets</h2>
-
-<button><%= link_to 'Ajouter', new_project_path %></button>
-
-<% @projects.each do |p|%>
-  <h3><%=p.name %></h3>
-  <% p.tags.each do |t|%>
-    <p><%= t.name %></p>
-  <% end %>
-  <p><%=p.year %></p>
-  <% p.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-  <% end %>
-  <br>
-  <button><%= link_to 'Éditer', edit_project_path(p) %></button>
-  <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
-<% end %>
-
-<hr>
-
-<h2>Tags</h2>
-
-<button><%= link_to 'Ajouter', new_tag_path %></button>
-
-<% @tags.each do |t|%>
-  <h3><%=t.name %></h3>
-  <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
-  <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
-<% end %>
-
-<#% console %>
+<div class="container">
+  <div class="page-padding">
+    <div class="page-title">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="section">
+      <div class="section-title">
+        <h2>Projets</h2>
+        <button><%= link_to 'Ajouter', new_project_path %></button>
+      </div>
+      <% @projects.order(:year).each do |p|%>
+      <hr>
+      <div class="project">
+        <div class="project-title">
+          <div class="infos">
+            <h4><%=p.name %></h4>
+            <span>•<%=p.year.strftime('%Y') %>  • </span>
+          </div>
+          <div class="buttons">
+            <button><%= link_to 'Éditer', edit_project_path(p) %></button>
+            <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+          </div>
+          </div>
+        <div class="tags">
+          <% p.tags.each do |t|%>
+          <div class="tag">
+            <span><%= t.name %></span>
+          </div>
+          <% end %>
+        </div>
+        <div class="project-photos">
+          <% p.photos.each do |photo| %>
+            <div class="project-photo">
+              <%= cl_image_tag photo.key %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="section">
+      <div class="section-title">
+        <h2>Tags</h2>
+        <button><%= link_to 'Ajouter', new_tag_path %></button>
+      </div>
+      <div class="project">
+      <% @tags.each do |t|%>
+      <hr>
+        <div class="project-title">
+          <div class="infos">
+            <h4><%=t.name %></h4>
+          </div>
+          <div class="buttons">
+            <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
+            <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

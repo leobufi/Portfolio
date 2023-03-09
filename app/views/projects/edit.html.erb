@@ -1,8 +1,25 @@
-<%= simple_form_for(@project) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :year %>
-  <%= f.input :link %>
-  <%= f.input :tags, as: :check_boxes, collection: Project::TAG, input_html: { multiple: true }%>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="page-padding">
+    <div class="page-title">
+      <h1>Éditer <%= @project.name %></h1>
+    </div>
+    <div class="form">
+      <%= simple_form_for(@project) do |f| %>
+        <%= f.input :name %>
+        <hr>
+        <%= f.input :year %>
+        <hr>
+        <%= f.input :link %>
+        <hr>
+        <%= f.input :tags, as: :check_boxes, collection: Project::TAG, input_html: { multiple: true }%>
+        <hr>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <div class="form-button">
+          <button>
+            <%= f.submit %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
