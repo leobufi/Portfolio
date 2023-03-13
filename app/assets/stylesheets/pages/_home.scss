@@ -1,1 +1,42 @@
-// Specific CSS for your home-page
+.home-container {
+  margin: 0 auto;
+}
+
+.home-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom: solid 4px $blue;
+}
+
+.baseline {
+  padding: 0em 6em;
+
+  h1 {
+      .colored {
+      color: $blue;
+    }
+  }
+}
+
+.contact {
+  padding: 0em 6em;
+
+    h1 {
+
+      a {
+        font-size: 1em;
+        color: $blue;
+
+        &:hover {
+          border-bottom: solid 4px $blue;
+        }
+      }
+    }
+}
+
+.p5-canva {
+  z-index: -100;
+  width: 99vw;
+  height: 70vh;
+}
