@@ -27,6 +27,7 @@ gem "font-awesome-sass", "~> 6.1"
 gem "autoprefixer-rails"
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
+gem "stimulus-rails"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
