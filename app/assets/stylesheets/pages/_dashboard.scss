@@ -16,12 +16,26 @@
     display: flex;
     column-gap: 2em;
     align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+    }
   }
 
   .buttons {
     display: flex;
     column-gap: 2em;
     align-items: center;
+  }
+}
+
+.project-content {
+  display: none;
+
+  &.show {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -39,4 +53,27 @@
     height: 150px;
     object-fit: cover;
    }
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2em;
+  align-items: center;
+  border-right: solid 1px #404040;
+  padding-right: 2em;
+  cursor: pointer;
+
+  .active {
+    color: $blue;
+  }
+}
+
+.content {
+  display: none;
+
+  &.active {
+    display: flex;
+    flex-direction: column;
+  }
 }
