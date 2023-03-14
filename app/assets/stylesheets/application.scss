@@ -13,6 +13,14 @@
 
 h1 {
   font-size: 4.5em;
+
+  .colored {
+    color: $blue;
+  }
+
+  &.colored {
+    color: $blue;
+  }
 }
 
 h2 {
@@ -21,6 +29,10 @@ h2 {
 
 h3 {
   font-size: 3em;
+
+  .small {
+  font-size: 0.3em;
+  }
 }
 
 h4 {
@@ -38,6 +50,10 @@ a {
 
   &:hover {
     color: $blue;
+  }
+
+  i {
+    font-size: 1.5em;
   }
 }
 

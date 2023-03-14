@@ -18,7 +18,40 @@
   </div>
   <div class="home-section">
     <div class="page-padding">
-      <div class="home-projects">
+      <div class="home-projects" data-controller="list">
+        <div class="projects-list">
+          <h1 class="colored">PROJECTS</h1>
+          <div class="list">
+            <% @projects.each do |p| %>
+              <div class="title" data-list-target="name" data-action="click->list#activate" data-tab-name="<%=p.name %>">
+                <h3><%= p.name %> <span class="small">•<%=p.year.strftime('%Y') %></span></h3><h3 class="arrow">→</h3>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="projects-features">
+          <% @projects.each do |p| %>
+            <div class="features" data-list-target="panel" data-tab-name="<%=p.name %>">
+              <div class="photos">
+                <% p.photos.each do |photo| %>
+                  <div class="photo">
+                    <%= cl_image_tag photo.key %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="tags">
+                <% p.tags.each do |t|%>
+                  <div class="tag">
+                    <span><%= t.name %></span>
+                  </div>
+                <% end %>
+              </div>
+              <div class="link">
+                <a href="<%= p.link%>"><i class="fa-solid fa-link"></i></a>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
