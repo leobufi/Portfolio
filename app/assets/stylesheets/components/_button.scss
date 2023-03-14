@@ -6,7 +6,12 @@ button {
 
   &:hover {
     background-color: $white;
+
+    a {
+      color: $blue;
+    }
   }
+
 
   input {
     background-color: transparent;
