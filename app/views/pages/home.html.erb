@@ -1,6 +1,6 @@
 <div class="navbar">
-  <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </div>
 <div class="home-container">
@@ -29,15 +29,17 @@
             <% end %>
           </div>
         </div>
-        <div class="projects-features">
-          <% @projects.each do |p| %>
+        <div class="projects-features" data-controller="swiper">
+          <% @projects.order(:year).each do |p| %>
             <div class="features" data-list-target="panel" data-tab-name="<%=p.name %>">
-              <div class="photos">
-                <% p.photos.each do |photo| %>
-                  <div class="photo">
-                    <%= cl_image_tag photo.key %>
-                  </div>
-                <% end %>
+              <div class="photos swiper">
+                <div class="swiper-wrapper">
+                  <% p.photos.each do |photo| %>
+                    <div class="photo swiper-slide">
+                      <%= cl_image_tag photo.key %>
+                    </div>
+                  <% end %>
+                </div>
               </div>
               <div class="tags">
                 <% p.tags.each do |t|%>
