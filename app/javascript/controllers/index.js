@@ -13,5 +13,8 @@ application.register("list", ListController)
 import SketchController from "./sketch_controller"
 application.register("sketch", SketchController)
 
+import SwiperController from "./swiper_controller"
+application.register("swiper", SwiperController)
+
 import TabsController from "./tabs_controller"
 application.register("tabs", TabsController)
