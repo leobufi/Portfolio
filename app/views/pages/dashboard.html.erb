@@ -13,6 +13,10 @@
           <h2 data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="tags">Tags</h2>
           <button><%= link_to 'Ajouter', new_tag_path %></button>
         </div>
+        <div class="tabs">
+          <h2 data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="categories">Catégories</h2>
+          <button><%= link_to 'Ajouter', new_category_path %></button>
+        </div>
       </div>
       <div class="tabs-content">
         <div class="content active" data-tabs-target="panel" data-tab-name="projects" >
@@ -55,10 +59,29 @@
               <div class="project-title">
                 <div class="infos">
                   <h4><%=t.name %></h4>
+                  <% t.categories.each do |c|%>
+                    <span><%= c.name %></span>
+                  <% end %>
                 </div>
                 <div class="buttons">
                   <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
                   <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class= "content" data-tabs-target="panel" data-tab-name="categories">
+          <div class="project">
+            <% @categories.each do |c|%>
+            <hr>
+              <div class="project-title">
+                <div class="infos">
+                  <h4><%=c.name %></h4>
+                </div>
+                <div class="buttons">
+                  <button><%= link_to 'Éditer', edit_category_path(c) %></button>
+                  <button><%= link_to "Supprimer", category_path(c), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
                 </div>
               </div>
             <% end %>

@@ -6,6 +6,10 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
+    category_params = params[:tag][:categories]
+    category_params.delete("")
+    categories = Category.find(category_params)
+    @tag.categories << categories
     if @tag.save
       redirect_to dashboard_path
     else
@@ -19,6 +23,19 @@ class TagsController < ApplicationController
 
   def update
     @tag = Tag.find(params[:id])
+      if @tag.categories.empty?
+        category_params = params[:tag][:categories]
+        category_params.delete("")
+        categories = Category.find(category_params)
+        @tag.categories << categories
+      else
+        tag_categories = JointCategory.where(tag_id: params[:id])
+        tag_categories.destroy_all
+        category_params = params[:tag][:categories]
+        category_params.delete("")
+        categories = Category.find(category_params)
+        @tag.categories << categories
+      end
     @tag.update(tag_params)
     redirect_to dashboard_path
   end

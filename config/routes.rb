@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   resources :projects, only: [:new, :create, :edit, :update, :destroy]
   resources :tags, only: [:new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:new, :create, :edit, :update, :destroy]
 
 end
