@@ -55,7 +55,7 @@ export default class extends Controller {
         let c = color(225, 100, 50);
         fill(c);
         texture(this.rails);
-        sphere(150, 12, 12);
+        box(150);
       pop();
     }
   }

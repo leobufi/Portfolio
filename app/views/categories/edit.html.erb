@@ -1,12 +1,11 @@
 <div class="container">
   <div class="page-padding">
     <div class="page-title">
-      <h1>Ajouter un Tag</h1>
+      <h1>Éditer une catégorie</h1>
     </div>
     <div class="form">
-      <%= simple_form_for(@tag) do |f| %>
+      <%= simple_form_for(@category) do |f| %>
         <%= f.input :name %>
-        <%= f.input :categories, as: :check_boxes, collection: Tag::CATEGORY, input_html: { multiple: true }%>
         <div class="form-button">
           <button>
             <%= f.submit %>
