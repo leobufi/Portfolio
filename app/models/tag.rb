@@ -5,6 +5,7 @@ class Tag < ApplicationRecord
     has_many :categories, through: :joint_categories
 
     validates :name, presence: true
+    validates :rate, inclusion: 1..10
 
     CATEGORY = Category.all
 

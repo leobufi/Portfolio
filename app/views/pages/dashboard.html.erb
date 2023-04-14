@@ -20,7 +20,7 @@
       </div>
       <div class="tabs-content">
         <div class="content active" data-tabs-target="panel" data-tab-name="projects" >
-          <% @projects.order(:year).each do |p|%>
+          <% @projects.order(year: :desc).each do |p|%>
           <hr>
           <div class="project">
             <div class="project-title">
@@ -54,14 +54,19 @@
         </div>
         <div class= "content" data-tabs-target="panel" data-tab-name="tags">
           <div class="project">
-            <% @tags.each do |t|%>
+            <% @tags.order(:name).each do |t|%>
             <hr>
               <div class="project-title">
                 <div class="infos">
                   <h4><%=t.name %></h4>
                   <% t.categories.each do |c|%>
-                    <span><%= c.name %></span>
+                    <span>•<%= c.name %> •</span>
                   <% end %>
+                  <div>
+                    <% t.rate.to_i.times do %>
+                    <i class="fa-solid fa-star"></i>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="buttons">
                   <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
@@ -73,7 +78,7 @@
         </div>
         <div class= "content" data-tabs-target="panel" data-tab-name="categories">
           <div class="project">
-            <% @categories.each do |c|%>
+            <% @categories.order(:name).each do |c|%>
             <hr>
               <div class="project-title">
                 <div class="infos">
