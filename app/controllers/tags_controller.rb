@@ -10,6 +10,9 @@ class TagsController < ApplicationController
     category_params.delete("")
     categories = Category.find(category_params)
     @tag.categories << categories
+    name = []
+    name << categories.map { |c| c.name }
+    @tag.category = name[0][0]
     if @tag.save
       redirect_to dashboard_path
     else
@@ -28,6 +31,9 @@ class TagsController < ApplicationController
         category_params.delete("")
         categories = Category.find(category_params)
         @tag.categories << categories
+        name = []
+        name << categories.map { |c| c.name }
+        @tag.category = name[0][0]
       else
         tag_categories = JointCategory.where(tag_id: params[:id])
         tag_categories.destroy_all
@@ -35,6 +41,9 @@ class TagsController < ApplicationController
         category_params.delete("")
         categories = Category.find(category_params)
         @tag.categories << categories
+        name = []
+        name << categories.map { |c| c.name }
+        @tag.category = name[0][0]
       end
     @tag.update(tag_params)
     redirect_to dashboard_path

@@ -1,14 +1,23 @@
 import { Controller } from "@hotwired/stimulus";
+import { ArrayBuffer } from "@rails/activestorage";
 
 // Connects to data-controller="sketch"
 export default class extends Controller {
 
   static values = {
-    font: String
+    font: String,
+    tags: Array,
   }
 
   connect() {
     console.log("connected to P5 controller");
+    console.log(this.tagsValue)
+    const name = this.tagsValue.map(stack => stack.name);
+    const rate = this.tagsValue.map(stack => stack.rate);
+    const category = this.tagsValue.map(stack => stack.category);
+    console.log(name);
+    console.log(rate);
+    console.log(category);
     this._setupAll();
   }
 
@@ -38,7 +47,7 @@ export default class extends Controller {
       this.rails.fill(0, 0, 100)
       this.rails.textSize(30);
       this.rails.textAlign(CENTER);
-      this.rails.text('Ruby On Rails', 100, 100);
+      this.rails.text(this.tagsValue[0].name, 100, 100);
     }
   }
 

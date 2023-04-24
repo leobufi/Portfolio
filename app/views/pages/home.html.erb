@@ -13,7 +13,12 @@
     </div>
   </div>
   <div class="home-section" id="skills">
-    <div class="p5-canva" data-controller="sketch" id="p5-canva" data-sketch-font-value='<%= asset_path('Porpora-Regular.woff') %>'>
+    <div
+      class="p5-canva"
+      data-controller="sketch"
+      id="p5-canva"
+      data-sketch-font-value='<%= asset_path('Porpora-Regular.woff') %>'
+      data-sketch-tags-value="<%= @tags.to_json %>">
     </div>
   </div>
   <div class="home-section">
