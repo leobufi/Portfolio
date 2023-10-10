@@ -17,7 +17,7 @@ export default class extends Controller {
     // const name = this.tagsValue.map(stack => stack.name);
     // const rate = this.tagsValue.map(stack => stack.rate);
     const category = this.tagsValue.map(stack => stack.category);
-    console.log(category);
+    // console.log(category);
     // console.log(rate);
     this._setupAll();
     this.randomPositions()
@@ -35,7 +35,7 @@ export default class extends Controller {
       this.shapesPositions.push(position);
       i++
     }
-    console.log(this.shapesPositions)
+    // console.log(this.shapesPositions)
   }
 
   between(min, max) {
@@ -59,7 +59,7 @@ export default class extends Controller {
   _setupWindow() {
 
     window.setup = () => {
-      this.canvas = createCanvas(windowWidth*0.99, windowHeight*0.9);
+      this.canvas = createCanvas(windowWidth*0.955, windowHeight*0.88);
       this.canvas.parent("p5-canva");
       colorMode(HSL);
       frameRate(75);
