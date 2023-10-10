@@ -1,6 +1,17 @@
 // Define variables for your color scheme
+@function randomColor1() {
+  $hue: random(224)-1;
+  @return hsl($hue, 75, 75);
+}
+
+@function randomColor2() {
+  $hue: random(224)-1;
+  @return hsl($hue, 75, 75);
+}
 
 // For example:
-$blue: #0040FF;
+$blue: blue;
 $black: #000000;
 $white: #ffffff;
+$green: #DCEF8F;
+$salmon: #EFC98F;

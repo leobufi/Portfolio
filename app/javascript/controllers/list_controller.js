@@ -6,6 +6,8 @@ export default class extends Controller {
 
   connect() {
     console.log('Hi from List Controller')
+    console.log(this.nameTargets)
+    console.log(this.panelTargets)
   }
 
   activate(event) {

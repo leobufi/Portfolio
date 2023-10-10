@@ -11,8 +11,10 @@
 @import "components/index";
 @import "pages/index";
 
+
 h1 {
   font-size: 4.5em;
+  font-family: "VG 5000";
 
   .colored {
     color: $blue;
@@ -28,6 +30,7 @@ h2 {
 }
 
 h3 {
+  // font-family: "VG 5000";
   font-size: 3em;
 
   .small {
@@ -40,7 +43,19 @@ h4 {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 3em;
+
+  .colored {
+    color: $blue;
+
+    &.credible {
+      font-family: Credible;
+    }
+  }
+
+  &.colored {
+    color: $blue;
+  }
 }
 
 a {
