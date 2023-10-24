@@ -28,6 +28,7 @@ gem "autoprefixer-rails"
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
 gem "stimulus-rails"
+gem 'rack-cors'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

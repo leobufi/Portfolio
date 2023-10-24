@@ -17,21 +17,21 @@ h1 {
   font-family: "VG 5000";
 
   .colored {
-    color: $blue;
+    color:$color
   }
 
   &.colored {
-    color: $blue;
+    color: $color
   }
 }
 
 h2 {
-  font-size: 3.75em;
+  font-size: 3em;
 }
 
 h3 {
   // font-family: "VG 5000";
-  font-size: 3em;
+  font-size: 2.5em;
 
   .small {
   font-size: 0.3em;
@@ -39,14 +39,14 @@ h3 {
 }
 
 h4 {
-  font-size: 2.25em;
+  font-size: 2em;
 }
 
 p {
   font-size: 3em;
 
   .colored {
-    color: $blue;
+    color: $color;
 
     &.credible {
       font-family: Credible;
@@ -54,7 +54,7 @@ p {
   }
 
   &.colored {
-    color: $blue;
+    font-weight: 800;
   }
 }
 
@@ -64,11 +64,15 @@ a {
   color: $white;
 
   &:hover {
-    color: $blue;
+    color: $color;
   }
 
   i {
     font-size: 1.5em;
+
+    &:hover {
+      color: $color;
+    }
   }
 }
 
@@ -84,7 +88,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 2em 0em;
-  border-bottom: solid 4px $blue;
+  border-bottom: solid 4px $white;
 }
 
 .section-title {

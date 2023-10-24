@@ -1,12 +1,12 @@
 .navbar {
-  background-color: $salmon;
+  background-color: $black;
   width: 3.5em;
-  height: 88vh;
+  height: 87.5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 3em 1em;
-  border-right: solid 4px $blue;
+  border-right: solid 1px $white;
   position: sticky;
   top: 5em;
   left: 0px;
@@ -14,19 +14,19 @@
 
   .tab {
     transform: rotate(-90deg) translateY(-2em);
-    font-weight: 700;
     text-transform: uppercase;
 
     a {
-      color: $green;
+      color: $white;
       cursor: pointer;
 
       &:hover {
-        color: $blue;
+        font-weight: 900;
       }
 
       &.active {
-        color: $blue;
+        font-weight: 900;
+        color: $color;
       }
     }
   }

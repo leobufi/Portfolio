@@ -8,7 +8,9 @@ export default class extends Controller {
     console.log('Hi from Tab Controller')
   }
 
+
   activate(event) {
+
     event.preventDefault()
     const tab = event.target
     this.tabTargets.forEach((tabTarget) => {
