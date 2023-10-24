@@ -1,100 +1,102 @@
-<div class="container">
-  <div class="page-padding">
-    <div class="page-title">
-      <h1>Dashboard</h1>
-      <button><%= link_to 'Homepage', root_path %></button>
-    </div>
-    <div class="section" data-controller="tabs random-colors">
-      <div class="section-title">
-        <div class="tabs" >
-          <h2 class="active" data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="projects">Projets</h2>
-          <button><%= link_to 'Ajouter', new_project_path %></button>
-        </div>
-        <div class="tabs">
-          <h2 data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="tags">Tags</h2>
-          <button><%= link_to 'Ajouter', new_tag_path %></button>
-        </div>
-        <div class="tabs">
-          <h2 data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="categories">Catégories</h2>
-          <button><%= link_to 'Ajouter', new_category_path %></button>
-        </div>
+<div class="hero-dashboard">
+  <div class="container">
+    <div class="page-padding">
+      <div class="page-title">
+        <h1>Dashboard</h1>
+        <button><%= link_to 'Homepage', root_path %></button>
       </div>
-      <div class="tabs-content">
-        <div class="content active" data-tabs-target="panel" data-tab-name="projects" >
-          <% @projects.order(year: :desc).each do |p|%>
-          <hr>
-          <div class="project">
-            <div class="project-title">
-              <div class="infos">
-                <h4 data-tabs-target="title" data-action="click->tabs#show" data-tab-name="<%=p.name %>"><%=p.name %></h4>
-                <span>•<%=p.year.strftime('%Y') %>  • </span>
-              </div>
-              <div class="buttons">
-                <button><%= link_to 'Éditer', edit_project_path(p) %></button>
-                <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
-              </div>
-            </div>
-            <div class="project-content" data-tabs-target="project" data-tab-name="<%=p.name %>">
-              <div class="tags">
-                <% p.tags.each do |t|%>
-                <div class="tag">
-                  <span><%= t.name %></span>
-                </div>
-                <% end %>
-              </div>
-              <div class="project-photos">
-                <% p.photos.each do |photo| %>
-                  <div class="project-photo">
-                    <%= cl_image_tag photo.key %>
-                  </div>
-                <% end %>
-              </div>
-            </div>
+      <div class="section" data-controller="tabs random-colors">
+        <div class="section-title">
+          <div class="tabs" >
+            <h2 class="active" data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="projects">Projets</h2>
+            <button><%= link_to 'Ajouter', new_project_path %></button>
           </div>
-          <% end %>
+          <div class="tabs">
+            <h2 data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="tags">Tags</h2>
+            <button><%= link_to 'Ajouter', new_tag_path %></button>
+          </div>
+          <div class="tabs">
+            <h2 data-tabs-target="tab" data-action="click->tabs#activate" data-tab-name="categories">Catégories</h2>
+            <button><%= link_to 'Ajouter', new_category_path %></button>
+          </div>
         </div>
-        <div class= "content" data-tabs-target="panel" data-tab-name="tags">
-          <div class="project">
-            <% @tags.order(:name).each do |t|%>
+        <div class="tabs-content">
+          <div class="content active" data-tabs-target="panel" data-tab-name="projects" >
+            <% @projects.order(year: :desc).each do |p|%>
             <hr>
+            <div class="project">
               <div class="project-title">
                 <div class="infos">
-                  <h4><%=t.name %></h4>
-                  <% t.categories.each do |c|%>
-                    <span>•<%= c.name %> •</span>
+                  <h4 data-tabs-target="title" data-action="click->tabs#show" data-tab-name="<%=p.name %>"><%=p.name %></h4>
+                  <span>•<%=p.year.strftime('%Y') %>  • </span>
+                </div>
+                <div class="buttons">
+                  <button><%= link_to 'Éditer', edit_project_path(p) %></button>
+                  <button><%= link_to "Supprimer", project_path(p), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+                </div>
+              </div>
+              <div class="project-content" data-tabs-target="project" data-tab-name="<%=p.name %>">
+                <div class="tags">
+                  <% p.tags.each do |t|%>
+                  <div class="tag">
+                    <span><%= t.name %></span>
+                  </div>
                   <% end %>
-                  <div>
-                    <% t.rate.to_i.times do %>
-                    <i class="fa-solid fa-star"></i>
-                    <% end %>
-                  </div>
                 </div>
-                <div class="buttons">
-                  <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
-                  <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+                <div class="project-photos">
+                  <% p.photos.each do |photo| %>
+                    <div class="project-photo">
+                      <%= cl_image_tag photo.key %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
+            </div>
             <% end %>
           </div>
-        </div>
-        <div class= "content" data-tabs-target="panel" data-tab-name="categories">
-          <div class="project">
-            <% @categories.order(:name).each do |c|%>
-            <hr>
-              <div class="project-title">
-                <div class="infos">
-                  <h4><%=c.name %></h4>
+          <div class= "content" data-tabs-target="panel" data-tab-name="tags">
+            <div class="project">
+              <% @tags.order(:name).each do |t|%>
+              <hr>
+                <div class="project-title">
+                  <div class="infos">
+                    <h4><%=t.name %></h4>
+                    <% t.categories.each do |c|%>
+                      <span>•<%= c.name %> •</span>
+                    <% end %>
+                    <div>
+                      <% t.rate.to_i.times do %>
+                      <i class="fa-solid fa-star"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="buttons">
+                    <button><%= link_to 'Éditer', edit_tag_path(t) %></button>
+                    <button><%= link_to "Supprimer", tag_path(t), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+                  </div>
                 </div>
-                <div class="buttons">
-                  <button><%= link_to 'Éditer', edit_category_path(c) %></button>
-                  <button><%= link_to "Supprimer", category_path(c), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+              <% end %>
+            </div>
+          </div>
+          <div class= "content" data-tabs-target="panel" data-tab-name="categories">
+            <div class="project">
+              <% @categories.order(:name).each do |c|%>
+              <hr>
+                <div class="project-title">
+                  <div class="infos">
+                    <h4><%=c.name %></h4>
+                  </div>
+                  <div class="buttons">
+                    <button><%= link_to 'Éditer', edit_category_path(c) %></button>
+                    <button><%= link_to "Supprimer", category_path(c), method: :delete, remote: true, data: { confirm: "Es-tu vraiment sûre de ton choix ducon ?" } %></button>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <%# <%= console %>
 </div>
-<%= console %>

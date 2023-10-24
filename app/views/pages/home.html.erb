@@ -1,4 +1,4 @@
-<div class="hero-home" data-controller="list random-colors">
+<div class="hero-home" data-controller="list random-colors day-night-mode">
   <div class="baseline">
     <div class="scrolling-content">
       <div class="text">
@@ -21,6 +21,10 @@
     <div class="tab">
       <a data-list-target="name" data-action="click->list#activate" data-tab-name="contact">Contact</a>
     </div>
+    <label class="switch">
+        <input type="checkbox" id="switchButton">
+        <span class="slider round"></span>
+    </label>
   </div>
   <div class="home-container">
     <div class="home-section active" data-list-target="panel" data-tab-name="skills">

@@ -61,7 +61,6 @@ p {
 a {
   font-size: 1.2em;
   text-decoration: none;
-  color: $white;
 
   &:hover {
     color: $color;
@@ -73,6 +72,78 @@ a {
     &:hover {
       color: $color;
     }
+  }
+}
+
+.hero-home {
+  background-color: $black;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+
+  &.day-mode {
+    background-color: $white;
+    color: $black;
+
+    a {
+      color: $black;
+    }
+
+    .navbar {
+      border-color: $black;
+    }
+
+    .baseline {
+      border-color: $black;
+    }
+
+    .list {
+      .title {
+        &.active {
+          border-bottom: solid 2px $black;
+
+          h3 {
+            color: $color;
+
+            &.arrow {
+              display: inline-block;
+              color: $black;
+            }
+          }
+
+        }
+      }
+    }
+
+    .tag {
+      border-color: $black;
+    }
+
+    .contact {
+
+      h1 {
+
+        a {
+          font-size: 1em;
+
+          &:hover {
+            border-bottom: solid 4px $black;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.hero-dashboard {
+  background-color: $black;
+  color: $white;
+
+  a {
+      color: $white;
   }
 }
 

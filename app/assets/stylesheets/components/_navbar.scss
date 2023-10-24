@@ -1,5 +1,4 @@
 .navbar {
-  background-color: $black;
   width: 3.5em;
   height: 87.5vh;
   display: flex;
@@ -17,7 +16,6 @@
     text-transform: uppercase;
 
     a {
-      color: $white;
       cursor: pointer;
 
       &:hover {
@@ -29,5 +27,58 @@
         color: $color;
       }
     }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $black;
+    border: $white solid 1px;
+    border-radius: 5px;
+    -webkit-transition: .4s;
+    transition: .4s;
+    transform: translateX(-33px) translateY(20px) rotate(90deg);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 5px;
+    background-color: $white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: $white;
+    border-color: $black;
+
+    &.slider:before {
+      background-color: $black;
+    }
+  }
+
+  input:checked+.slider:before {
+    transform: translateX(26px);
   }
 }

@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DayNightModeController from "./day_night_mode_controller"
+application.register("day-night-mode", DayNightModeController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
