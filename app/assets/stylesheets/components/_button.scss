@@ -1,6 +1,6 @@
 button {
   padding: 0.5em 1em;
-  border: solid 1px #0040FF;
+  border: $white solid 1px;
   border-radius: 25px;
   background-color: transparent;
 
@@ -8,7 +8,7 @@ button {
     background-color: $white;
 
     a {
-      color: $blue;
+      color: $black;
     }
   }
 

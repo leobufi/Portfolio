@@ -1,4 +1,4 @@
-<div class="hero-home" data-controller="list">
+<div class="hero-home" data-controller="list random-colors">
   <div class="baseline">
     <div class="scrolling-content">
       <div class="text">
@@ -36,9 +36,9 @@
       <div class="page-padding">
         <div class="home-projects" data-controller="list">
           <div class="projects-list">
-            <h1 class="colored">PROJECTS</h1>
+            <h1>PROJECTS</h1>
             <div class="list">
-              <% @projects.each do |p| %>
+              <% @projects.sort_by(&:year).reverse.each do |p| %>
                 <div class="title" data-list-target="name" data-action="click->list#activate" data-tab-name="<%=p.name %>">
                   <h3><%= p.name %> <span class="small">•<%=p.year.strftime('%Y') %></span></h3><h3 class="arrow">→</h3>
                 </div>
@@ -65,7 +65,7 @@
                   <% end %>
                 </div>
                 <div class="link">
-                  <a href="<%= p.link%>"><i class="fa-solid fa-link"></i></a>
+                  <a href="<%= p.link%>" target="_blank"><i class="fa-solid fa-link"></i></a>
                 </div>
               </div>
             <% end %>
@@ -76,7 +76,7 @@
     <div class="home-section" data-list-target="panel" data-tab-name="contact">
       <div class="page-padding">
         <div class="contact">
-          <h1><a href="mailto:bufi.leo@gmail.com">Write me</a> if you want to start a project together.
+          <h1><a href="mailto:bufi.leo@gmail.com">Write me if you want to start a project together.</a></h1>
         </div>
       </div>
     </div>

@@ -15,7 +15,12 @@ export default class extends Controller {
     const name = event.target
     console.log(name.dataset.tabName)
     this.nameTargets.forEach((nameTarget) => {
-      nameTarget.classList.toggle("active", nameTarget == name)
+      // nameTarget.classList.toggle("active", nameTarget == name)
+       if (nameTarget.dataset.tabName == name.dataset.tabName) {
+       nameTarget .classList.toggle("active")
+      } else {
+        nameTarget.classList.remove("active")
+      }
     })
 
     this.panelTargets.forEach((panel) => {
