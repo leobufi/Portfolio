@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.5'
+gem 'rails', '~> 7.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -29,6 +29,8 @@ gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
 gem "stimulus-rails"
 gem 'rack-cors'
+gem "sprockets-rails"
+gem "bootstrap"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
