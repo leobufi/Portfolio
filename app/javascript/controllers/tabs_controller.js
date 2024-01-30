@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = [ "tab", "panel", "title", "project" ]
 
   connect() {
-    console.log('Hi from Tab Controller')
+    // console.log('Hi from Tab Controller')
   }
 
 
@@ -14,12 +14,12 @@ export default class extends Controller {
     event.preventDefault()
     const tab = event.target
     this.tabTargets.forEach((tabTarget) => {
-      console.log(tab.dataset.tabName)
+      // console.log(tab.dataset.tabName)
       tabTarget.classList.toggle("active", tabTarget == tab)
     })
 
     this.panelTargets.forEach((panel) => {
-      console.log(panel.dataset.tabName)
+      // console.log(panel.dataset.tabName)
       if (panel.dataset.tabName == tab.dataset.tabName) {
         panel.classList.toggle("active")
       } else {
@@ -32,12 +32,12 @@ export default class extends Controller {
     event.preventDefault()
     const title = event.target
     this.titleTargets.forEach((titleTarget) => {
-      console.log(title.dataset.tabName)
+      // console.log(title.dataset.tabName)
       titleTarget.classList.toggle("show", titleTarget == title)
     })
 
     this.projectTargets.forEach((project) => {
-      console.log(project.dataset.tabName)
+      // console.log(project.dataset.tabName)
       if (project.dataset.tabName == title.dataset.tabName) {
         project.classList.toggle("show")
       } else {
