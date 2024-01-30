@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="day-night-mode"
 export default class extends Controller {
   connect() {
-    console.log('hi from day night mode');
+    // console.log('hi from day night mode');
     this.switchMode();
   }
 

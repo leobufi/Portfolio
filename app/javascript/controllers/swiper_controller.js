@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
 
-    console.log('Hi from swiper controller')
+    // console.log('Hi from swiper controller')
 
     new Swiper('.swiper', {
       // Optional parameters

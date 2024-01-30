@@ -1,22 +1,20 @@
 <div class="hero-home" data-controller="list random-colors day-night-mode">
   <div class="baseline">
-    <div class="scrolling-content">
-      <div class="text">
-        <p>Hi ! I’m <span class="colored">Léo Bufi</span>, a freelance developper based in <span class="colored credible">Marseille.</span>
-        I like to make <span class="colored">useless</span>, <span class="colored">fun</span> and <span class="colored">stupid</span> projects.</p>
-      </div>
-      <div class="text">
-        <p>Hi ! I’m <span class="colored">Léo Bufi</span>, a freelance developper based in <span class="colored credible">Marseille.</span>
-        I like to make <span class="colored">useless</span>, <span class="colored">fun</span> and <span class="colored">stupid</span> projects.</p>
+    <div class="scrolling-content" data-controller="horizontal-scroll">
+      <div class="marquee3k" data-speed="1.5">
+        <div class="text">
+          <p>Hi ! I’m <span class="colored">Léo Bufi</span>, a freelance developper & web designer based in <span class="colored credible">Marseille.</span>
+          I like to make <span class="colored">useful</span>, <span class="colored">solid</span> and <span class="colored">usable</span> projects.</p>
+        </div>
       </div>
     </div>
   </div>
   <div class="navbar">
-    <div class="tab">
+    <div class="tab" style="display: none;">
       <a class="active" data-list-target="name" data-action="click->list#activate" data-tab-name="skills">Skills</a>
     </div>
     <div class="tab">
-      <a data-list-target="name" data-action="click->list#activate" data-tab-name="projects">Projects</a>
+      <a class="active" data-list-target="name" data-action="click->list#activate" data-tab-name="projects">Projects</a>
     </div>
     <div class="tab">
       <a data-list-target="name" data-action="click->list#activate" data-tab-name="contact">Contact</a>
@@ -27,7 +25,7 @@
     </label>
   </div>
   <div class="home-container">
-    <div class="home-section active" data-list-target="panel" data-tab-name="skills">
+    <div class="home-section" style="display: none;" data-list-target="panel" data-tab-name="skills">
       <div
         class="p5-canva"
         data-controller="sketch"
@@ -36,21 +34,50 @@
         data-sketch-tags-value="<%= @tags.to_json %>">
       </div>
     </div>
-    <div class="home-section" data-list-target="panel" data-tab-name="projects">
+    <div class="home-section active" data-list-target="panel" data-tab-name="projects">
       <div class="page-padding">
         <div class="home-projects" data-controller="list">
           <div class="projects-list">
             <h1>PROJECTS</h1>
             <div class="list">
               <% @projects.sort_by(&:year).reverse.each do |p| %>
+                <% if p == Project.first %>
+                <div class="title active" data-list-target="name" data-action="click->list#activate" data-tab-name="<%=p.name %>">
+                  <h3><%= p.name %> <span class="small">•<%=p.year.strftime('%Y') %></span></h3><h3 class="arrow">→</h3>
+                </div>
+                <% else %>
                 <div class="title" data-list-target="name" data-action="click->list#activate" data-tab-name="<%=p.name %>">
                   <h3><%= p.name %> <span class="small">•<%=p.year.strftime('%Y') %></span></h3><h3 class="arrow">→</h3>
                 </div>
+                <% end %>
               <% end %>
             </div>
           </div>
           <div class="projects-features" data-controller="swiper">
-            <% @projects.order(:year).each do |p| %>
+            <% @projects.sort_by(&:year).reverse.each do |p| %>
+              <% if p == Project.first %>
+              <div class="features active" data-list-target="panel" data-tab-name="<%=p.name %>">
+                <div class="photos swiper">
+                  <div class="swiper-wrapper">
+                    <% p.photos.each do |photo| %>
+                      <div class="photo swiper-slide">
+                        <%= cl_image_tag photo.key %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="tags">
+                  <% p.tags.each do |t|%>
+                    <div class="tag">
+                      <span><%= t.name %></span>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="link">
+                  <a href="<%= p.link%>" target="_blank"><i class="fa-solid fa-link"></i></a>
+                </div>
+              </div>
+              <% else %>
               <div class="features" data-list-target="panel" data-tab-name="<%=p.name %>">
                 <div class="photos swiper">
                   <div class="swiper-wrapper">
@@ -72,6 +99,7 @@
                   <a href="<%= p.link%>" target="_blank"><i class="fa-solid fa-link"></i></a>
                 </div>
               </div>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -80,7 +108,7 @@
     <div class="home-section" data-list-target="panel" data-tab-name="contact">
       <div class="page-padding">
         <div class="contact">
-          <h1><a href="mailto:bufi.leo@gmail.com">Write me if you want to start a project together.</a></h1>
+          <h1><a href="mailto:bufi.leo@gmail.com">Write me if you want to start a project together.</a>You can also contact me <a href="https://www.malt.fr/profile/leobufi" target="_blank">here</a> or <a href="https://www.linkedin.com/in/leo-bufi/" target="_blank">there</a>.</h1>
         </div>
       </div>
     </div>

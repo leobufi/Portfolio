@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="random-colors"
 export default class extends Controller {
   connect() {
-    console.log('Hi from RandomColors');
+    // console.log('Hi from RandomColors');
     this.randomColors();
   }
 

@@ -1,7 +1,4 @@
 import { Controller } from "@hotwired/stimulus";
-import { ArrayBuffer } from "@rails/activestorage";
-import { linkClickSelector } from "@rails/ujs";
-import { normalizeOptions } from "webpack/lib/optimize/SplitChunksPlugin";
 
 // Connects to data-controller="sketch"
 export default class extends Controller {
@@ -13,9 +10,9 @@ export default class extends Controller {
 
   connect() {
     console.log("connected to P5 controller");
-    // console.log(this.tagsValue.length)
-    // const name = this.tagsValue.map(stack => stack.name);
-    // const rate = this.tagsValue.map(stack => stack.rate);
+    //console.log(this.tagsValue.length)
+    const name = this.tagsValue.map(stack => stack.name);
+    const rate = this.tagsValue.map(stack => stack.rate);
     const category = this.tagsValue.map(stack => stack.category);
     // console.log(category);
     // console.log(rate);
@@ -35,7 +32,7 @@ export default class extends Controller {
       this.shapesPositions.push(position);
       i++
     }
-    // console.log(this.shapesPositions)
+    //console.log(this.shapesPositions)
   }
 
   between(min, max) {

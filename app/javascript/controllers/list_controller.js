@@ -5,15 +5,15 @@ export default class extends Controller {
  static targets = [ "name", "panel" ]
 
   connect() {
-    console.log('Hi from List Controller')
-    console.log(this.nameTargets)
-    console.log(this.panelTargets)
+    // console.log('Hi from List Controller')
+    // console.log(this.nameTargets)
+    // console.log(this.panelTargets)
   }
 
   activate(event) {
     event.preventDefault()
     const name = event.target
-    console.log(name.dataset.tabName)
+    // console.log(name.dataset.tabName)
     this.nameTargets.forEach((nameTarget) => {
       // nameTarget.classList.toggle("active", nameTarget == name)
        if (nameTarget.dataset.tabName == name.dataset.tabName) {
@@ -24,7 +24,7 @@ export default class extends Controller {
     })
 
     this.panelTargets.forEach((panel) => {
-      console.log(panel.dataset.tabName)
+      // console.log(panel.dataset.tabName)
       if (panel.dataset.tabName == name.dataset.tabName) {
         panel.classList.toggle("active")
       } else {

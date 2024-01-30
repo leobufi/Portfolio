@@ -78,6 +78,8 @@ a {
 .hero-home {
   background-color: $black;
   color: $white;
+  height: 100vh;
+  overflow: hidden;
 
   a {
     color: $white;
@@ -97,6 +99,13 @@ a {
 
     .baseline {
       border-color: $black;
+    }
+
+    .home-section {
+
+      &.active {
+        background-color: $white;
+      }
     }
 
     .list {
@@ -135,6 +144,10 @@ a {
       }
     }
 
+    .projects-list {
+      border-right: solid 1px $black;
+    }
+
   }
 }
 
@@ -153,6 +166,7 @@ a {
 
 .page-padding {
   padding: 4em 4em;
+  height: 100%;
 }
 
 .section {
