@@ -8,3 +8,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "p5" # @1.9.0
 pin "swiper" # @11.0.5
 pin "marquee3000" # @1.1.1
+pin "bootstrap" # @5.3.2
+pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.8
