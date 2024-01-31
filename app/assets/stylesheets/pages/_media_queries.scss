@@ -47,12 +47,13 @@
       .projects-list {
         max-height: 40%;
         border-bottom: solid 1px $white;
+        -webkit-overflow-scrolling: touch;
       }
 
       .projects-features {
         max-height: 50%;
         padding-left: 0em;
-        overflow: none;
+        -webkit-overflow-scrolling: touch;
       }
 
       .features {
