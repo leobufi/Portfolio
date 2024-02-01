@@ -33,6 +33,10 @@
 
     &.active {
 
+      h1 {
+        font-size: 3em;
+      }
+
       .page-padding {
         padding: 2em 2em;
       }
@@ -80,18 +84,6 @@
         font-size: 3em;
       }
     }
-  }
-
-}
-
-@media(max-width: 420px) {
-
-  h1 {
-    font-size: 2.5em;
-  }
-
-  h3 {
-    font-size: 1em;
   }
 
 }
