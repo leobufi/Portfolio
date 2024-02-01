@@ -202,5 +202,10 @@
       row-gap: 1em;
       column-gap: 1em;
     }
+
+    .links {
+      display: flex;
+      column-gap: 1em;
+    }
   }
 }

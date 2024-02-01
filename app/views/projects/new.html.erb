@@ -12,6 +12,8 @@
           <hr>
           <%= f.input :link %>
           <hr>
+          <%= f.input :github %>
+          <hr>
           <%= f.input :tags, as: :check_boxes, collection: Project::TAG, input_html: { multiple: true }%>
           <hr>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
