@@ -95,8 +95,11 @@
                     </div>
                   <% end %>
                 </div>
-                <div class="link">
+                <div class="links">
                   <a href="<%= p.link%>" target="_blank"><i class="fa-solid fa-link"></i></a>
+                  <% if p.github %>
+                  <a href="<%= p.github%>" target="_blank"><i class="fa-brands fa-github"></i></a>
+                  <% end %>
                 </div>
               </div>
               <% end %>
