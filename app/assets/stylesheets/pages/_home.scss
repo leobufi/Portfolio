@@ -196,6 +196,12 @@
       }
     }
 
+    .infos {
+      p {
+        font-size: 1em;
+      }
+    }
+
     .tags {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
