@@ -66,7 +66,7 @@
                     <% end %>
                   </div>
                 </div>
-                <% if p.infos != nil %>
+                <% if !p.infos.blank? %>
                 <div class="infos">
                   <p><%= p.infos %></p>
                 </div>
@@ -96,7 +96,7 @@
                     <% end %>
                   </div>
                 </div>
-                <% if p.infos != nil %>
+                <% if !p.infos.blank? %>
                 <div class="infos">
                   <p><%= p.infos %></p>
                 </div>
