@@ -88,9 +88,11 @@
                     <% end %>
                   </div>
                 </div>
-                <div class="infos">
-                  <p><%= p.infos %></p>
-                </div>
+                  <% if p.infos != nil %>
+                  <div class="infos">
+                    <p><%= p.infos %></p>
+                  </div>
+                  <% end %>
                 <div class="tags">
                   <% p.tags.each do |t|%>
                     <div class="tag">
