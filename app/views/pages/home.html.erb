@@ -66,6 +66,11 @@
                     <% end %>
                   </div>
                 </div>
+                <% if p.infos != nil %>
+                <div class="infos">
+                  <p><%= p.infos %></p>
+                </div>
+                <% end %>
                 <div class="tags">
                   <% p.tags.each do |t|%>
                     <div class="tag">
@@ -73,8 +78,11 @@
                     </div>
                   <% end %>
                 </div>
-                <div class="link">
+                <div class="links">
                   <a href="<%= p.link%>" target="_blank"><i class="fa-solid fa-link"></i></a>
+                  <% if p.github %>
+                  <a href="<%= p.github%>" target="_blank"><i class="fa-brands fa-github"></i></a>
+                  <% end %>
                 </div>
               </div>
               <% else %>
@@ -88,11 +96,11 @@
                     <% end %>
                   </div>
                 </div>
-                  <% if p.infos != nil %>
-                  <div class="infos">
-                    <p><%= p.infos %></p>
-                  </div>
-                  <% end %>
+                <% if p.infos != nil %>
+                <div class="infos">
+                  <p><%= p.infos %></p>
+                </div>
+                <% end %>
                 <div class="tags">
                   <% p.tags.each do |t|%>
                     <div class="tag">
