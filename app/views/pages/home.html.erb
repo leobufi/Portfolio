@@ -41,7 +41,7 @@
             <h1>PROJECTS</h1>
             <div class="list">
               <% @projects.sort_by(&:year).reverse.each do |p| %>
-                <% if p == Project.first %>
+                <% if p == Project.last %>
                 <div class="title active" data-list-target="name" data-action="click->list#activate" data-tab-name="<%=p.name %>">
                   <h3><%= p.name %> <span class="small">•<%=p.year.strftime('%Y') %></span></h3><h3 class="arrow">→</h3>
                 </div>
@@ -55,7 +55,7 @@
           </div>
           <div class="projects-features" data-controller="swiper">
             <% @projects.sort_by(&:year).reverse.each do |p| %>
-              <% if p == Project.first %>
+              <% if p == Project.last %>
               <div class="features active" data-list-target="panel" data-tab-name="<%=p.name %>">
                 <div class="photos swiper">
                   <div class="swiper-wrapper">
