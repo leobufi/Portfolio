@@ -98,7 +98,7 @@ export default class extends Controller {
       const [x, y] = (this.shapesPositions && this.shapesPositions[index]) || fallbackPosition;
 
       const rate = word.rate || 5; // valeur par défaut si manquante
-      const radius = rate * 10;    // taille globale de la forme (augmentée)
+      const radius = rate * 7.5;     // taille globale de la forme (réduite pour mieux circuler)
 
       // Vitesse aléatoire douce
       const vx = (Math.random() * 2 - 1) * 1.5;
@@ -317,7 +317,7 @@ export default class extends Controller {
         fill(bright);
         noStroke();
         const baseRate = p.combinedRate || word.rate || 5;
-        textSize(baseRate * 3);
+        textSize(baseRate * 2.2);
         textAlign(CENTER, CENTER);
         const label = p.names && p.names.length > 0 ? p.names.join(" • ") : word.name;
         text(label, x, y);
